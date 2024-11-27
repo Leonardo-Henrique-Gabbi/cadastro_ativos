@@ -1,5 +1,6 @@
 
 <?php
+include_once('../controle/controle_session.php');
 include_once('cabecario.php');
 ?>
 <body>

@@ -4,8 +4,6 @@ $conexao= mysqli_connect('localhost','root','','ativo');//hostname,username,senh
 if(!$conexao){
     echo "falha na conexão";
     exit();
-}else{
-    echo 'conectou';
 }
 
 ?>

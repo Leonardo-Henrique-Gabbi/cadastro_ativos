@@ -1,4 +1,5 @@
 <?php
+include('../controle/controle_session.php');
 include_once('../modelo/conexao.php');
 include_once('../controle/funcoes.php');
 $usuario_altera= $_GET['idUsuario'];

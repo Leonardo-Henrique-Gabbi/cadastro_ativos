@@ -1,4 +1,5 @@
 <?php
+include('controle_session.php');
 include('../modelo/conexao.php');
 $nome = $_POST['nome'];
 $turma = $_POST['turma'];

@@ -26,18 +26,18 @@ INSERT INTO USUARIO (
 $result= mysqli_query($conexao, $query) or die (false);
 if($result){
     echo "<script> alert('usuario cadastrado')
-    window.location.href'../visao/listar_usuario.php';
+    window.location.href='../visao/listar_usuario.php';
     </script>";
    
     
 }else{
-    echo"<script> alert ('falha no cadastro')
-    window.location.href'../visao/usuario_cadastro.php';
+    "<script> alert ('falha no cadastro')
+    window.location.href='../visao/usuario_cadastro.php';
     </script>";
 }
 
 
-echo $nome."<br>".$senha."<br>".$usuario."<br>".$turma;
+
 
 
 ?>
