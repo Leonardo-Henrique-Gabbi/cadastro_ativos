@@ -7,7 +7,8 @@ $usuario= $_POST['usuario'];
 
 $senhaCrip= base64_encode($senha);
      $sql="Select
-     count(*) as quantidade
+     count(*) as quantidade,
+     idUsuario
     from
        usuario
     where
@@ -19,6 +20,7 @@ $dados= $result->fetch_assoc();
 if($dados["quantidade"]>0){
      $_SESSION['login_ok']= true;
      $_SESSION['controle_login']= true;
+     $_SESSION['id_user']=$dados['idUsuario'];
      header('Location:../visao/listar_usuario.php');
 }else{
     $_SESSION['login_ok']= false;

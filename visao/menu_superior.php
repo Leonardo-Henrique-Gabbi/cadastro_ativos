@@ -133,7 +133,7 @@
     <!-- Barra de navegação -->
     <header>
         <!-- Logo do site (imagem) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Google_Logo_2015.png" alt="Logo" class="logo">
+     
         
         <!-- Menu de navegação -->
         <nav>
