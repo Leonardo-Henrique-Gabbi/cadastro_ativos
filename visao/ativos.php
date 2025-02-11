@@ -20,6 +20,10 @@ FROM ativo a";
 $result = mysqli_query($conexao,$sql) or die (false);
 $ativos_bd= $result->fetch_all(MYSQLI_ASSOC);
 ?>
+<head>
+<link rel="stylesheet" href="ativo.css">
+
+</head>
 
 <script src="../js/ativos.js"></script>
 <body>

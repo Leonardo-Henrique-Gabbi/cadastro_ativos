@@ -53,7 +53,14 @@ include_once('cabecario.php')
             <label for="recipient-name" class="col-form-label">Observação Ativo</label>
             <input type="text" class="form-control" id="observacao">
           </div>
-
+          <div class="mb-3">
+  <label for="formFile" class="form-label">Imagem Ativo</label>
+  <input class="form-control" accept="image/png, image/jpeg, image/WEBP" type="file" id="imgAtivo">
+</div>
+<div class="mb-3 div_previer" style="display:none;">
+  <label for="formFile" class="form-label">Preview imagem</label>
+                    <img  id="previewImagem" style=" width: 150px; position: relative;left:20%;">
+        
         
       </div>
       <div class="modal-footer">

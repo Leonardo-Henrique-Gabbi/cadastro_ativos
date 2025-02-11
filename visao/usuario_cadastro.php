@@ -1,8 +1,10 @@
 
 <?php
-include_once('../controle/controle_session.php');
 include_once('cabecario.php');
 ?>
+<head>
+<link rel="stylesheet" href="../css/usuario.css">
+</head>
 <body>
     <div class="container">
     <form action="../controle/cadastrar_usuario_controle.php" method="POST">

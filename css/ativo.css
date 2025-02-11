@@ -1,0 +1,162 @@
+/* ======== GERAL ======== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eceff4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ======== CONTAINER PRINCIPAL ======== */
+.container {
+    width: 95%;
+    max-width: 1300px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ======== TÍTULO ======== */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2d4059;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ======== BOTÃO ESTILIZADO ======== */
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#btn_modal {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+#btn_modal:hover {
+    background: #e64a19;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(255, 87, 34, 0.4);
+}
+
+/* ======== TABELA ======== */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    background: #f9f9f9;
+    padding: 15px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ======== CABEÇALHO DA TABELA ======== */
+.table th {
+    background: #4a90e2;
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ======== LINHAS E CELULAS ======== */
+.table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    color: #333;
+}
+
+/* ======== LINHAS ALTERNADAS ======== */
+.table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ======== HOVER NAS LINHAS ======== */
+.table tbody tr:hover {
+    background-color: rgba(74, 144, 226, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+/* ======== ÍCONES DE AÇÕES ======== */
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.acoes i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.acoes i:hover {
+    transform: scale(1.2);
+}
+
+.inativo i {
+    color: #27ae60;
+}
+
+.ativo i {
+    color: #c0392b;
+}
+
+.edit i {
+    color: #2980b9;
+}
+
+.edit i:hover {
+    color: #1c638c;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .acoes i {
+        font-size: 18px;
+    }
+
+    .btn-container {
+        justify-content: center;
+    }
+}

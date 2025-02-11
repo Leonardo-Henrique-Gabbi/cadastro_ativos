@@ -1,0 +1,128 @@
+/* ======== ESTILOS GERAIS ======== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+/* ======== CONTAINER PRINCIPAL ======== */
+.container {
+    width: 90%;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ======== BOTÃO "CADASTRAR MARCA" ======== */
+.btn.cadastrar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.btn.cadastrar:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ======== TABELA (ESTILO MODERNO) ======== */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f0f3fa;  /* Fundo azul claro */
+}
+
+/* ======== CABEÇALHO DA TABELA ======== */
+.table th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* ======== CÉLULAS DA TABELA ======== */
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ======== ALTERNANDO CORES DAS LINHAS ======== */
+.table tbody tr:nth-child(even) {
+    background-color: #dbe5ff; /* Azul claro */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #c8d7ff; /* Azul mais escuro */
+}
+
+.table tbody tr:hover {
+    background-color: #b0c4ff;
+    transition: background 0.3s;
+}
+
+/* ======== ALINHAMENTO DO TEXTO ======== */
+.table th, .table td {
+    text-align: center;
+}
+
+/* ======== BOTÕES DE AÇÃO ======== */
+.acoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* ======== ÍCONES DE EDIÇÃO E STATUS ======== */
+.ativo i, .inativo i, .edit i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.ativo i {
+    color: green;
+}
+
+.inativo i {
+    color: red;
+}
+
+.edit i {
+    color: #007bff;
+}
+
+.ativo i:hover, .inativo i:hover, .edit i:hover {
+    transform: scale(1.2);
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .btn.cadastrar {
+        width: 100%;
+        text-align: center;
+    }
+}
