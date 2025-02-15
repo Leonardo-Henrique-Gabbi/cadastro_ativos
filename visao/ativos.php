@@ -10,6 +10,7 @@ $sql = "SELECT
 idAtivo,
 descricaoAtivo,
 quantidadeAtivo,
+quantidadeMinAtivo,
 statusAtivo,
 observacaoAtivo,
 (SELECT descricaoMArca from marca m WHERE m.idMarca = a.idMarca) as marca,
@@ -21,7 +22,12 @@ $result = mysqli_query($conexao,$sql) or die (false);
 $ativos_bd= $result->fetch_all(MYSQLI_ASSOC);
 ?>
 <head>
-<link rel="stylesheet" href="ativo.css">
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="fechar_modal()" data-bs-target="#exampleModal" id="modal">Cadastrar Modal</button>
+<form method="GET" action="../controle/url.php" class="form-busca">
+    <input type="text" name="busca" placeholder="Buscar produto no Mercado Livre" required>
+    <button type="submit">Buscar</button>
+</form>
 
 </head>
 
@@ -36,6 +42,7 @@ $ativos_bd= $result->fetch_all(MYSQLI_ASSOC);
       <th scope="col">Marca</th>
       <th scope="col">Tipo</th>
       <th scope="col">Quantidade</th>
+      <th scope="col">QuantidadeMin</th>
       <th scope="col">Observação</th>
       <th scope="col">Data Cadastro</th>
       <th scope="col">Usuario Cadastro</th>
@@ -51,6 +58,7 @@ $ativos_bd= $result->fetch_all(MYSQLI_ASSOC);
         <td>  <?php echo $ativo['marca']; ?></td>
         <td>  <?php echo $ativo['tipo']; ?></td>
         <td>  <?php echo $ativo['quantidadeAtivo']; ?></td>
+        <td>  <?php echo $ativo['quantidadeMinAtivo'];?></td>
         <td>  <?php echo $ativo['observacaoAtivo']; ?></td>
         <td>  <?php
 

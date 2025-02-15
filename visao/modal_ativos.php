@@ -29,6 +29,10 @@ include_once('cabecario.php')
             <label for="recipient-name" class="col-form-label">Quantidade</label>
             <input type="number" class="form-control" id="quantidade">
           </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">QuantidadeMin</label>
+            <input type="number" class="form-control" id="quantidadeMin">
+          </div>
           <div class="mb-1">
             <label for="recipient-name" class="col-form-label">Marca</label>
                   <select class="form-select" id="marca">

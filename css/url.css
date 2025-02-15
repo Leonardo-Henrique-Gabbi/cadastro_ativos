@@ -1,0 +1,93 @@
+/* ======== ESTILO GERAL ======== */
+
+/* ======== CONTAINER DOS RESULTADOS ======== */
+.resultados-container {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 30px;
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Alinha os itens ao início do contêiner */
+}
+
+/* ======== ESTILO DOS PRODUTOS ======== */
+.produto {
+    align-items: center;
+    background: white;
+  
+    border-radius: 12px;
+    margin: 15px;
+    padding: 15px;
+    width: calc(24.33% - 22px);
+ 
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: inline-grid;
+    align-items: end;
+    height: 44vh;
+  
+}
+
+.produto:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ======== ESTILO DA IMAGEM ======== */
+.produto img {
+    width: 150px;
+    height: 151px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+/* ======== TÍTULO DOS PRODUTOS ======== */
+.produto h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* ======== PREÇO ======== */
+.produto p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* ======== BOTÃO "VER NO MERCADO LIVRE" ======== */
+.produto a {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.produto a:hover {
+    background: linear-gradient(135deg, #e6b800, #cc8800);
+    transform: scale(1.1);
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 992px) {
+    .produto {
+        width: calc(50% - 20px); /* 2 colunas para tablets */
+        flex: 1 1 calc(50% - 20px); /* Ajusta para 2 colunas */
+    }
+}
+
+@media (max-width: 600px) {
+    .produto {
+        width: 100%; /* 1 coluna para celulares */
+        flex: 1 1 100%; /* Ajusta para 1 coluna */
+    }
+}

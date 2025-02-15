@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 error_reporting(E_ERROR);
 include('../modelo/conexao.php');
 include('controle_session.php');
@@ -7,6 +7,7 @@ $ativo = $_POST['ativo'];
 $marca = $_POST['marca'];
 $tipo = $_POST['tipo'];
 $quantidade = $_POST['quantidade'];
+$quantidadeMin= $_POST['quantidadeMinAtivo'];
 $observacao = $_POST['observacao'];
 $user=$_SESSION['id_user'];
 $acao= $_POST['acao'];
@@ -39,6 +40,7 @@ if ($result == false){
 insert into ativo (
  descricaoAtivo,
  quantidadeAtivo,
+ quantidadeMinAtivo,
  statusAtivo,
  observacaoAtivo,
  urlImagem,
@@ -49,6 +51,7 @@ insert into ativo (
  )values(
   '".$ativo."',
    '".$quantidade."',
+   '".$quantidadeMin."',
    'S',
     '".$observacao."',
     '".$urlImg."',
@@ -83,6 +86,7 @@ if($acao=='get_info'){
     Select
      descricaoAtivo,
         quantidadeAtivo,
+        quantidadeMinAtivo,
         observacaoAtivo,
         idMarca,
         idTipo,
@@ -105,6 +109,7 @@ if ($acao == 'update') {
                     SET 
                             descricaoAtivo = '$ativo', 
                             quantidadeAtivo = '$quantidade', 
+                             quantidadeMinAtivo = '$quantidadeMin', 
                             idTipo = '$tipo', 
                             idMarca = '$marca', 
                             observacaoAtivo = '$observacao'";
@@ -121,21 +126,17 @@ if ($acao == 'update') {
         $img_antiga= $_SERVER['DOCUMENT_ROOT'].'/'.$info[0]['urlImagem'];
         unlink($img_antiga);
 
-        $completa_sql=", urlImagem='$url'";
-    }else{
-        $completa_sql="";
     }
-
         if (move_uploaded_file($img['tmp_name'], $pasta_base . $data . '.' . $extensao)) {
             $urlImg = 'aulasenac/projeto_cadastro/uploads/' . $data . '.' . $extensao;
             $queryUpdate .= ", urlImagem = '$urlImg'";
         }
-    }
+    
 
     $queryUpdate .= " WHERE idAtivo = $idAtivo";
 
     if (mysqli_query($conexao, $queryUpdate)) {
         echo "Informações Alteradas";
     }
-
+}
 ?>

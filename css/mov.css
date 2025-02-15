@@ -1,114 +1,140 @@
-/* ======== GERAL ======== */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f7fc;
-    margin: 0;
-    padding: 0;
-}
-
-/* ======== CONTAINER PRINCIPAL ======== */
-.container {
-    width: 90%;
-    margin: 30px auto;
-    background: white;
-    padding: 25px;
+/* ======== CONTAINER DA TABELA ======== */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* ======== BOTÃO "CADASTRAR MOVIMENTAÇÃO" ======== */
-.btn-container {
-    display: flex;
-    justify-content: flex-end;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 20px;
 }
 
+/* ======== ESTILO DA TABELA ======== */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* ======== CABEÇALHO COM ESTILO MODERNO ======== */
+.table th {
+    background: linear-gradient(135deg, #0056b3, #007bff);
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* ======== CÉLULAS DA TABELA ======== */
+.table td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+}
+
+/* ======== LINHAS ALTERNADAS ======== */
+.table tbody tr:nth-child(odd) {
+    background-color: #f3f8ff;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #e5efff;
+}
+
+/* ======== EFEITO HOVER ======== */
+.table tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+/* ======== ÍCONES DE AÇÕES ======== */
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.acoes i {
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+    padding: 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+/* ======== ESTILIZAÇÃO DOS ÍCONES ======== */
+.inativo i {
+    background: #27ae60;
+    color: white;
+}
+
+.ativo i {
+    background: #c0392b;
+    color: white;
+}
+
+.edit i {
+    background: #2980b9;
+    color: white;
+}
+
+.ativo i:hover, .inativo i:hover, .edit i:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+/* ======== BOTÃO CADASTRAR (ABAIXO DA TABELA) ======== */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #modal {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     border: none;
-    padding: 12px 18px;
-    border-radius: 25px;
+    padding: 14px 24px;
+    border-radius: 30px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 #modal:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #0056b3, #003d82);
+    transform: scale(1.08);
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* ======== TABELA (ESTILO MODERNO) ======== */
-.table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #f0f3fa;  /* ALTERADO PARA UM TOM SUAVE AZUL CLARO */
-}
-
-/* ======== CABEÇALHO DA TABELA ======== */
-.table th {
-    background-color: #007bff;
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-weight: bold;
-}
-
-/* ======== CÉLULAS DA TABELA ======== */
-.table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* ======== ALTERNANDO CORES DAS LINHAS ======== */
-.table tbody tr:nth-child(even) {
-    background-color: #dbe5ff; /* ALTERADO PARA UM TOM MAIS CLARO AZUL */
-}
-
-.table tbody tr:nth-child(odd) {
-    background-color: #c8d7ff; /* ALTERADO PARA UM TOM SUAVE AZUL MAIS FORTE */
-}
-
-.table tbody tr:hover {
-    background-color: #b0c4ff;
-    transition: background 0.3s;
-}
-
-/* ======== CENTRALIZANDO TEXTO DAS CÉLULAS ======== */
-.table th, .table td {
-    text-align: center;
-}
-
-/* ======== FORMULÁRIOS (BORDAS ARREDONDADAS) ======== */
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-top: 5px;
-    font-size: 14px;
 }
 
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding: 20px;
-    }
-
     .table {
         font-size: 14px;
     }
 
-    .btn-container {
-        justify-content: center;
+    .acoes i {
+        font-size: 16px;
+        width: 32px;
+        height: 32px;
+    }
+
+    #modal {
+        font-size: 14px;
+        padding: 12px 20px;
     }
 }

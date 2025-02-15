@@ -12,5 +12,7 @@ function busca_info_bd($conexao,$tabela,$coluna_where = false, $valor_where=fals
    return $dados;
    
 }
-
+function buscar_prod_ml($pesquisa){
+   
+}
 ?>

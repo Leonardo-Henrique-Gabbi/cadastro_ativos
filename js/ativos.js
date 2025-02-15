@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#salvar_info").click(function(){
      let descricao_ativo = $("#descricao").val();
      let quantidade_ativo = $("#quantidade").val();
+     let quantidadeMinAtivo = $("#quantidadeMin").val();
      let marca_ativo = $("#marca").val();
      let tipo_ativo = $("#tipo").val();
      let observacao_ativo = $("#observacao").val();
@@ -22,6 +23,7 @@ $(document).ready(function(){
      formData.append('marca',marca_ativo);
      formData.append('tipo',tipo_ativo);
      formData.append('quantidade',quantidade_ativo);
+     formData.append('quantidadeMinAtivo',quantidadeMinAtivo);
      formData.append('observacao',observacao_ativo);
      formData.append('idAtivo',idAtivo);
      formData.append('img',img);
@@ -34,7 +36,7 @@ $(document).ready(function(){
         contentType: false,
         success: function(result){
           alert(result);
-          //location.reload();
+          location.reload();
      } 
         });
     });
@@ -74,6 +76,7 @@ $(document).ready(function(){
         
          $("#descricao").val(retorno[0]['descricaoAtivo']);
       $("#quantidade").val(retorno[0]['quantidadeAtivo']);
+      $("#quantidadeMin").val(retorno[0]['quantidadeMinAtivo']);
       $("#marca").val(retorno[0]['idMarca']);
       $("#tipo").val(retorno[0]['idTipo']);
       $("#observacao").val(retorno[0]['observacaoAtivo']);
@@ -92,6 +95,7 @@ $(document).ready(function(){
   function limpar_modal(){
     $("#descricao").val('');
     $("#quantidade").val('');
+    $("#quantidadeMinAtivo").val('');
     $("#marca").val('');
     $("#tipo").val('');
     $("#observacao").val('');
